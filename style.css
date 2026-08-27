@@ -1,0 +1,1493 @@
+/* =====================================================
+   RESET
+   ===================================================== */
+
+* {
+    box-sizing: border-box;
+
+    margin: 0;
+
+    padding: 0;
+}
+
+
+/* =====================================================
+   HTML / BODY
+   ===================================================== */
+
+html,
+body {
+
+    width: 100%;
+
+    height: 100%;
+}
+
+
+body {
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    overflow: hidden;
+
+
+    /* SFONDO ROMANTICO */
+
+    background:
+
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(255, 255, 255, 0.8),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(255, 182, 193, 0.7),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 20% 85%,
+            rgba(255, 105, 180, 0.35),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 90% 85%,
+            rgba(255, 80, 120, 0.4),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #ffd1dc,
+            #ffb6c9,
+            #ff8fab
+        );
+
+
+    color: #3b1724;
+
+
+    -webkit-tap-highlight-color:
+        transparent;
+}
+
+
+/* =====================================================
+   CONTENITORE PRINCIPALE
+   ===================================================== */
+
+.container {
+
+    width: 100%;
+
+    height: 100dvh;
+
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+
+    padding: 20px;
+
+
+    position: relative;
+
+
+    z-index: 5;
+}
+
+
+/* =====================================================
+   CARD
+   ===================================================== */
+
+.card,
+.success {
+
+    width:
+        min(90vw, 520px);
+
+
+    min-height: 500px;
+
+
+    padding:
+        45px 30px;
+
+
+    display: flex;
+
+    flex-direction: column;
+
+
+    justify-content: center;
+
+    align-items: center;
+
+
+    text-align: center;
+
+
+    position: relative;
+
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.96),
+            rgba(255, 245, 248, 0.94)
+        );
+
+
+    border:
+        2px solid
+        rgba(255, 255, 255, 0.8);
+
+
+    border-radius:
+        35px;
+
+
+    box-shadow:
+
+        0 30px 80px
+        rgba(151, 34, 72, 0.25),
+
+        0 10px 30px
+        rgba(255, 80, 130, 0.2),
+
+        inset 0 0 30px
+        rgba(255, 255, 255, 0.7);
+
+
+    backdrop-filter:
+        blur(15px);
+
+    -webkit-backdrop-filter:
+        blur(15px);
+
+
+    animation:
+        cardAppear
+        0.9s
+        cubic-bezier(.17, .67, .35, 1.3);
+}
+
+
+/* =====================================================
+   GLOW DELLA CARD
+   ===================================================== */
+
+.card::before,
+.success::before {
+
+    content: "";
+
+
+    position: absolute;
+
+
+    inset: -3px;
+
+
+    border-radius:
+        38px;
+
+
+    background:
+
+        linear-gradient(
+            120deg,
+            rgba(255, 255, 255, 0.8),
+            rgba(255, 120, 160, 0.4),
+            rgba(255, 255, 255, 0.8)
+        );
+
+
+    z-index: -1;
+
+
+    filter:
+        blur(10px);
+
+
+    opacity: 0.8;
+}
+
+
+/* =====================================================
+   ANIMAZIONE CARD
+   ===================================================== */
+
+@keyframes cardAppear {
+
+    from {
+
+        opacity: 0;
+
+
+        transform:
+
+            translateY(30px)
+            scale(0.85);
+    }
+
+
+    to {
+
+        opacity: 1;
+
+
+        transform:
+
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =====================================================
+   EMOJI PRINCIPALE
+   ===================================================== */
+
+.emoji {
+
+    font-size:
+        75px;
+
+
+    margin-bottom:
+        15px;
+
+
+    filter:
+
+        drop-shadow(
+            0 8px 12px
+            rgba(255, 50, 100, 0.25)
+        );
+
+
+    animation:
+
+        heartbeat
+        1.5s
+        infinite
+        ease-in-out,
+
+        floating
+        3s
+        infinite
+        ease-in-out;
+}
+
+
+/* =====================================================
+   BATTITO
+   ===================================================== */
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+
+        transform:
+            scale(1);
+    }
+
+
+    50% {
+
+        transform:
+            scale(1.15);
+    }
+}
+
+
+/* =====================================================
+   GALLEGGIAMENTO
+   ===================================================== */
+
+@keyframes floating {
+
+    0%,
+    100% {
+
+        margin-top:
+            0;
+    }
+
+
+    50% {
+
+        margin-top:
+            -8px;
+    }
+}
+
+
+/* =====================================================
+   TITOLO
+   ===================================================== */
+
+h1 {
+
+    color:
+        #e63963;
+
+
+    font-size:
+        clamp(30px, 8vw, 44px);
+
+
+    font-weight:
+        800;
+
+
+    letter-spacing:
+        -1px;
+
+
+    margin-bottom:
+        15px;
+
+
+    text-shadow:
+
+        0 3px 10px
+        rgba(230, 57, 99, 0.15);
+}
+
+
+/* =====================================================
+   DOMANDA
+   ===================================================== */
+
+.question {
+
+    font-size:
+        clamp(32px, 9vw, 48px);
+
+
+    font-weight:
+        900;
+
+
+    line-height:
+        1.1;
+
+
+    color:
+        #4a1827;
+
+
+    margin-bottom:
+        20px;
+
+
+    letter-spacing:
+        -1.5px;
+}
+
+
+/* =====================================================
+   TESTO SECONDARIO
+   ===================================================== */
+
+.subtext {
+
+    color:
+        #8a5666;
+
+
+    font-size:
+        16px;
+
+
+    line-height:
+        1.6;
+
+
+    margin-bottom:
+        35px;
+
+
+    max-width:
+        380px;
+}
+
+
+/* =====================================================
+   BOTTONI
+   ===================================================== */
+
+.buttons {
+
+    width:
+        100%;
+
+
+    min-height:
+        70px;
+
+
+    display:
+        flex;
+
+
+    justify-content:
+        center;
+
+
+    align-items:
+        center;
+
+
+    gap:
+        20px;
+
+
+    position:
+        relative;
+}
+
+
+/* =====================================================
+   STILE GENERALE BOTTONI
+   ===================================================== */
+
+button {
+
+    border:
+        none;
+
+
+    border-radius:
+        50px;
+
+
+    padding:
+        16px 32px;
+
+
+    font-size:
+        18px;
+
+
+    font-weight:
+        800;
+
+
+    font-family:
+        inherit;
+
+
+    cursor:
+        pointer;
+
+
+    touch-action:
+        manipulation;
+
+
+    -webkit-user-select:
+        none;
+
+    user-select:
+        none;
+
+
+    transition:
+
+        transform
+        0.2s ease,
+
+        box-shadow
+        0.2s ease;
+
+
+    outline:
+        none;
+}
+
+
+/* =====================================================
+   PULSANTE SI
+   ===================================================== */
+
+#yesBtn {
+
+    color:
+        white;
+
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ff477e,
+            #e91e63
+        );
+
+
+    box-shadow:
+
+        0 10px 25px
+        rgba(233, 30, 99, 0.35),
+
+        inset 0 1px 1px
+        rgba(255, 255, 255, 0.4);
+
+
+    position:
+        relative;
+
+
+    overflow:
+        hidden;
+}
+
+
+/* =====================================================
+   LUCE DEL PULSANTE SI
+   ===================================================== */
+
+#yesBtn::after {
+
+    content: "";
+
+
+    position:
+        absolute;
+
+
+    top:
+        0;
+
+    left:
+        -100%;
+
+
+    width:
+        60%;
+
+
+    height:
+        100%;
+
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.5),
+            transparent
+        );
+
+
+    transform:
+        skewX(-20deg);
+
+
+    animation:
+        buttonShine
+        3s
+        infinite;
+}
+
+
+@keyframes buttonShine {
+
+    0% {
+
+        left:
+            -100%;
+    }
+
+
+    35% {
+
+        left:
+            130%;
+    }
+
+
+    100% {
+
+        left:
+            130%;
+    }
+}
+
+
+#yesBtn:hover {
+
+    transform:
+        scale(1.08);
+
+
+    box-shadow:
+
+        0 15px 35px
+        rgba(233, 30, 99, 0.45);
+}
+
+
+#yesBtn:active {
+
+    transform:
+        scale(0.95);
+}
+
+
+/* =====================================================
+   PULSANTE NO
+   ===================================================== */
+
+#noBtn {
+
+    color:
+        #7c5360;
+
+
+    background:
+        rgba(255, 235, 241, 0.95);
+
+
+    border:
+        2px solid
+        #ffd0dc;
+
+
+    box-shadow:
+
+        0 7px 18px
+        rgba(120, 50, 70, 0.12);
+
+
+    position:
+        fixed;
+
+
+    margin:
+        0;
+
+
+    z-index:
+        100;
+
+
+    transform:
+        none;
+}
+
+
+/* =====================================================
+   SCHERMATA SUCCESSO
+   ===================================================== */
+
+.success {
+
+    display:
+        none;
+
+
+    animation:
+
+        successAppear
+        0.8s
+        cubic-bezier(.17, .67, .35, 1.3);
+}
+
+
+@keyframes successAppear {
+
+    from {
+
+        opacity:
+            0;
+
+
+        transform:
+            scale(0.6);
+    }
+
+
+    to {
+
+        opacity:
+            1;
+
+
+        transform:
+            scale(1);
+    }
+}
+
+
+/* =====================================================
+   CUORE GRANDE
+   ===================================================== */
+
+.big-heart {
+
+    font-size:
+        105px;
+
+
+    margin-bottom:
+        15px;
+
+
+    filter:
+
+        drop-shadow(
+            0 12px 20px
+            rgba(255, 30, 90, 0.3)
+        );
+
+
+    animation:
+
+        heartbeat
+        1.2s
+        infinite
+        ease-in-out;
+}
+
+
+/* =====================================================
+   TITOLO SUCCESSO
+   ===================================================== */
+
+.success h1 {
+
+    font-size:
+        clamp(38px, 10vw, 58px);
+
+
+    color:
+        #e63963;
+
+
+    margin-bottom:
+        20px;
+}
+
+
+/* =====================================================
+   FOTO DI COPPIA
+   ===================================================== */
+
+.couple-photo {
+
+    width:
+        min(100%, 380px);
+
+
+    height:
+        220px;
+
+
+    object-fit:
+        cover;
+
+
+    border-radius:
+        22px;
+
+
+    border:
+        4px solid white;
+
+
+    box-shadow:
+
+        0 12px 30px
+        rgba(151, 34, 72, 0.22),
+
+        0 4px 12px
+        rgba(255, 80, 130, 0.18);
+
+
+    margin-bottom:
+        20px;
+
+
+    animation:
+
+        photoAppear
+        1s
+        cubic-bezier(.17, .67, .35, 1.3);
+}
+
+
+/* =====================================================
+   ANIMAZIONE FOTO
+   ===================================================== */
+
+@keyframes photoAppear {
+
+    from {
+
+        opacity:
+            0;
+
+
+        transform:
+
+            scale(0.8)
+            translateY(15px);
+    }
+
+
+    to {
+
+        opacity:
+            1;
+
+
+        transform:
+
+            scale(1)
+            translateY(0);
+    }
+}
+
+
+/* =====================================================
+   TESTO SUCCESSO
+   ===================================================== */
+
+.success p {
+
+    color:
+        #76505e;
+
+
+    font-size:
+        19px;
+
+
+    line-height:
+        1.6;
+
+
+    margin-top:
+        10px;
+}
+
+
+/* =====================================================
+   TESTO "PER SEMPRE"
+   ===================================================== */
+
+.success .forever {
+
+    color:
+        #e63963;
+
+
+    font-weight:
+        800;
+
+
+    font-size:
+        23px;
+
+
+    margin-top:
+        20px;
+}
+
+
+/* =====================================================
+   CUORI DI SFONDO
+   ===================================================== */
+
+.hearts {
+
+    position:
+        fixed;
+
+
+    inset:
+        0;
+
+
+    overflow:
+        hidden;
+
+
+    pointer-events:
+        none;
+
+
+    z-index:
+        1;
+}
+
+
+.heart {
+
+    position:
+        absolute;
+
+
+    bottom:
+        -60px;
+
+
+    opacity:
+        0;
+
+
+    animation:
+
+        floatHeart
+        linear
+        forwards;
+
+
+    filter:
+
+        drop-shadow(
+            0 3px 5px
+            rgba(180, 30, 70, 0.15)
+        );
+}
+
+
+@keyframes floatHeart {
+
+    0% {
+
+        transform:
+
+            translateY(0)
+            rotate(0deg)
+            scale(0.7);
+
+
+        opacity:
+            0;
+    }
+
+
+    10% {
+
+        opacity:
+            0.75;
+    }
+
+
+    50% {
+
+        transform:
+
+            translateY(-50vh)
+            rotate(15deg)
+            scale(1);
+    }
+
+
+    100% {
+
+        transform:
+
+            translateY(-115vh)
+            rotate(-20deg)
+            scale(0.8);
+
+
+        opacity:
+            0;
+    }
+}
+
+
+/* =====================================================
+   FIORI DECORATIVI
+   ===================================================== */
+
+body::before,
+body::after {
+
+    position:
+        fixed;
+
+
+    font-size:
+        70px;
+
+
+    opacity:
+        0.55;
+
+
+    pointer-events:
+        none;
+
+
+    z-index:
+        2;
+
+
+    filter:
+
+        drop-shadow(
+            0 5px 10px
+            rgba(170, 30, 70, 0.15)
+        );
+}
+
+
+body::before {
+
+    content:
+        "🌸";
+
+
+    top:
+        4%;
+
+
+    left:
+        4%;
+
+
+    animation:
+
+        flowerFloat
+        4s
+        infinite
+        ease-in-out;
+}
+
+
+body::after {
+
+    content:
+        "🌹";
+
+
+    bottom:
+        4%;
+
+
+    right:
+        4%;
+
+
+    animation:
+
+        flowerFloat
+        5s
+        infinite
+        ease-in-out
+        reverse;
+}
+
+
+/* =====================================================
+   ANIMAZIONE FIORI
+   ===================================================== */
+
+@keyframes flowerFloat {
+
+    0%,
+    100% {
+
+        transform:
+
+            rotate(-5deg)
+            translateY(0);
+    }
+
+
+    50% {
+
+        transform:
+
+            rotate(8deg)
+            translateY(-10px);
+    }
+}
+
+
+/* =====================================================
+   FIORI AGGIUNTIVI
+   ===================================================== */
+
+.container::before {
+
+    content:
+        "🌷";
+
+
+    position:
+        fixed;
+
+
+    top:
+        12%;
+
+
+    right:
+        7%;
+
+
+    font-size:
+        45px;
+
+
+    opacity:
+        0.5;
+
+
+    animation:
+
+        flowerFloat
+        4.5s
+        infinite
+        ease-in-out;
+}
+
+
+.container::after {
+
+    content:
+        "🌺";
+
+
+    position:
+        fixed;
+
+
+    bottom:
+        10%;
+
+
+    left:
+        6%;
+
+
+    font-size:
+        50px;
+
+
+    opacity:
+        0.5;
+
+
+    animation:
+
+        flowerFloat
+        5s
+        infinite
+        ease-in-out
+        reverse;
+}
+
+
+/* =====================================================
+   IPHONE
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+    .container {
+
+        padding:
+
+            15px
+            15px
+            max(
+                15px,
+                env(safe-area-inset-bottom)
+            );
+    }
+
+
+    .card,
+    .success {
+
+        width:
+            calc(100vw - 30px);
+
+
+        min-height:
+            480px;
+
+
+        padding:
+            35px 20px;
+
+
+        border-radius:
+            30px;
+    }
+
+
+    .card::before,
+    .success::before {
+
+        border-radius:
+            33px;
+    }
+
+
+    .emoji {
+
+        font-size:
+            62px;
+
+
+        margin-bottom:
+            10px;
+    }
+
+
+    h1 {
+
+        font-size:
+            32px;
+
+
+        margin-bottom:
+            14px;
+    }
+
+
+    .question {
+
+        font-size:
+            36px;
+
+
+        margin-bottom:
+            18px;
+    }
+
+
+    .subtext {
+
+        font-size:
+            14px;
+
+
+        margin-bottom:
+            30px;
+    }
+
+
+    .buttons {
+
+        gap:
+            12px;
+
+
+        min-height:
+            65px;
+    }
+
+
+    button {
+
+        padding:
+            15px 25px;
+
+
+        font-size:
+            16px;
+    }
+
+
+    .big-heart {
+
+        font-size:
+            85px;
+    }
+
+
+    .success h1 {
+
+        font-size:
+            40px;
+
+
+        margin-bottom:
+            15px;
+    }
+
+
+    /* FOTO SU IPHONE */
+
+    .couple-photo {
+
+        width:
+            100%;
+
+
+        height:
+            180px;
+
+
+        border-radius:
+            18px;
+
+
+        border-width:
+            3px;
+
+
+        margin-bottom:
+            15px;
+    }
+
+
+    .success p {
+
+        font-size:
+            17px;
+
+
+        line-height:
+            1.5;
+    }
+
+
+    .success .forever {
+
+        font-size:
+            21px;
+
+
+        margin-top:
+            15px;
+    }
+
+
+    body::before {
+
+        font-size:
+            50px;
+
+
+        top:
+            4%;
+
+
+        left:
+            2%;
+    }
+
+
+    body::after {
+
+        font-size:
+            50px;
+
+
+        bottom:
+            3%;
+
+
+        right:
+            2%;
+    }
+
+
+    .container::before {
+
+        font-size:
+            35px;
+
+
+        top:
+            10%;
+
+
+        right:
+            2%;
+    }
+
+
+    .container::after {
+
+        font-size:
+            40px;
+
+
+        bottom:
+            8%;
+
+
+        left:
+            2%;
+    }
+}
+
+
+/* =====================================================
+   IPHONE MOLTO PICCOLI
+   ===================================================== */
+
+@media (max-height: 700px) {
+
+    .card,
+    .success {
+
+        min-height:
+            440px;
+
+
+        padding:
+            25px 20px;
+    }
+
+
+    .emoji {
+
+        font-size:
+            50px;
+    }
+
+
+    .question {
+
+        font-size:
+            32px;
+    }
+
+
+    .subtext {
+
+        margin-bottom:
+            20px;
+    }
+
+
+    /* Riduciamo la foto */
+
+    .couple-photo {
+
+        height:
+            150px;
+    }
+}
